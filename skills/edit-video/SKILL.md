@@ -44,12 +44,12 @@ Timing is always tied to spoken words, never to seconds: `"@word"`, `"@word#2"` 
 
 Rules that make it look edited by a person:
 - Hook on frame 1. The first 2 seconds should look "raw" (grade `raw`, `raw_tag`, `drift`) and the edit "switches on" at the first spoken name of the thing (`sound.switch_on`, `look.from`, `flash`, a `kinetic` word behind the head).
-- Safe zones: lower third (y 1450 to 1650) and above the head (y 60 to 320). Never cover the face. Full-screen takeovers (poster, board, exploded, silhouette, image full) are 1.5 to 3s, never two in a row.
+- Safe zones: lower third (y 1450 to 1650) and above the head (y 60 to 320). Never cover the face while the person is speaking. Screenshots and cards go below the chin (`board` with `lower: true`, y 1190, w 640) and captions shift up (`captions.y_over_board`, 1110). Full-screen takeovers are for moments that work without the face. Full-screen takeovers (poster, board, exploded, silhouette, image full) are 1.5 to 3s, never two in a row.
 - Mixed-typography captions: bold sans, the one meaning-carrying word per phrase in italic serif accent (`captions.style: "mixed"`, list the accent words in `captions.emphasis`). Phrases, not every word: `captions.phrases` lists the 60% of lines that deserve a caption.
 - Proof over decoration: the real cut list, the real storyboard, real screenshots (`board`), the real source frames (`filmstrip`). Never invent results, numbers, logos or testimonials.
 - Camera: a snap punch-in (1.08 to 1.22) on emphasis words, a slow creep on explanations, back to 1.0 on resets. Max one jump cut per 10s.
 - Sound: one whoosh per 10s, only on posters, kinetic words and layer views. Everything else is a pop, tick or thud. Music is added on the platform at posting.
-- Background: blur behind the person from switch-on (`blur_bg`, `blur_px` 8 to 10) so props read.
+- Background: leave it sharp when the set looks good (a textured wall is part of the look). Blur behind the person (`blur_bg`, `blur_px` 8 to 10) only when the background is plain or messy.
 - The creator's "never" list in the preset wins over everything above.
 
 ## 4. Storyboard (second approval, hard gate)

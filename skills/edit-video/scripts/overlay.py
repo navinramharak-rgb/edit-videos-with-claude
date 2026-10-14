@@ -80,6 +80,8 @@ body{font-family:Inter;position:relative}
 .poster .small{position:absolute;left:0;right:0;text-align:center;font:italic 400 110px/1 ISerif;color:#fff}
 .poster .big{position:absolute;left:0;right:0;text-align:center;font:400 500px/.82 Anton;color:#111;text-transform:uppercase;letter-spacing:-.01em}
 .poster.dark .big{color:#fff}.poster .big.orange{color:ACC}
+.poster .big.glow{text-shadow:0 0 40px rgba(255,107,46,.55),0 0 120px rgba(255,107,46,.35)}
+.poster .big .ch{white-space:pre}
 .poster .big .ch{display:inline-block}
 .poster .rule{position:absolute;left:50%;height:10px;background:#111;border-radius:5px;transform-origin:left center}
 .poster .sub{position:absolute;left:60px;right:60px;text-align:center;font:400 78px/1.1 Bebas;color:#fff;letter-spacing:.12em}
@@ -128,7 +130,7 @@ body{font-family:Inter;position:relative}
 .outro .box .post{margin-left:auto;font:700 36px/1 Inter;color:ACC}
 .outro .sub{position:absolute;left:0;right:0;top:900px;text-align:center;font:italic 400 70px/1 ISerif;color:rgba(255,255,255,.8)}
 .outro .brand{position:absolute;left:0;right:0;top:1560px;text-align:center;font:400 64px/1 Bebas;color:#fff;letter-spacing:.3em}
-.outro .skill{position:absolute;left:0;right:0;top:1640px;text-align:center;font:400 30px/1 Mono;color:ACC}
+.outro .skill{position:absolute;left:0;right:0;top:1640px;text-align:center;font:400 44px/1 Mono;color:ACC;letter-spacing:.02em}
 /* raw tag */
 .rawtag{left:50px;top:1760px;font:400 30px/1 Mono;color:#fff;background:rgba(0,0,0,.6);padding:14px 20px;border-radius:8px;letter-spacing:.05em}
 .rawtag i{display:inline-block;width:16px;height:16px;border-radius:50%;background:#ff4a3d;margin-right:14px;vertical-align:middle}
@@ -159,6 +161,8 @@ body{font-family:Inter;position:relative}
 .icard img{display:block;width:100%;height:100%;object-fit:cover}
 .icard .lab{position:absolute;left:0;right:0;bottom:0;padding:18px;text-align:center;font:400 26px/1 Mono;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.7))}
 .board{inset:0;background:rgba(8,8,10,.82)}
+.board.lower{background:transparent;pointer-events:none}
+.board.lower img{box-shadow:0 30px 70px rgba(0,0,0,.55),0 0 0 2px rgba(255,255,255,.08)}
 .board img{position:absolute;left:50%;transform:translateX(-50%);border-radius:28px;box-shadow:0 40px 90px rgba(0,0,0,.6)}
 /* profile card (Sahas-style popup) */
 .pcard{left:50%;background:#fff;border-radius:34px;padding:28px 44px 28px 28px;display:flex;align-items:center;gap:26px;box-shadow:0 30px 70px rgba(0,0,0,.5);transform-origin:center;white-space:nowrap}
@@ -198,7 +202,7 @@ body{font-family:Inter;position:relative}
 .sil .w{position:absolute;left:0;right:0;text-align:center;font:400 190px/1 Anton;color:#fff;text-transform:uppercase;letter-spacing:.02em}
 /* phone fan */
 .fan{inset:0}
-.fan .ph{position:absolute;left:50%;top:60%;width:440px;height:780px;margin:-390px 0 0 -220px;border-radius:44px;background:#141416;border:8px solid #2a2a2e;box-shadow:0 40px 90px rgba(0,0,0,.6);overflow:hidden;transform-origin:50% 120%}
+.fan .ph{position:absolute;left:50%;top:50%;width:440px;height:780px;margin:-390px 0 0 -220px;border-radius:44px;background:#141416;border:8px solid #2a2a2e;box-shadow:0 40px 90px rgba(0,0,0,.6);overflow:hidden;transform-origin:50% 120%}
 .fan .ph img{width:100%;height:100%;object-fit:cover;display:block}
 .fan .ph .n{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 260px/1 Anton;color:ACC;opacity:.55}
 .fan .ph .yours{position:absolute;left:0;right:0;bottom:0;padding:16px;text-align:center;font:400 26px/1 Mono;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.75))}
@@ -232,8 +236,8 @@ tl.to("#{id_}",{{opacity:0,y:-40,duration:.25,ease:"power2.in"}},{t1-0.25});''')
             small = e.get("small"); big = e.get("big"); sub = e.get("sub")
             if small: inner += f'<div class="small" id="{id_}s" style="top:{e.get("small_y",200)}px">{accent(small)}</div>'
             if big:
-                chars = "".join(f'<span class="ch">{esc(c) if c!=" " else "&nbsp;"}</span>' for c in big)
-                inner += f'<div class="big{" orange" if e.get("big_orange") else ""}" id="{id_}b" style="top:{e.get("big_y",330)}px;font-size:{e.get("big_size",500)}px">{chars}</div>'
+                chars = "".join("<br>" if c=="\n" else f'<span class="ch">{esc(c) if c!=" " else "&nbsp;"}</span>' for c in big)
+                inner += f'<div class="big{" orange" if e.get("big_orange") else ""}{" glow" if e.get("glow") else ""}" id="{id_}b" style="top:{e.get("big_y",330)}px;font-size:{e.get("big_size",500)}px">{chars}</div>'
             if big: inner += f'<div class="rule" id="{id_}r" style="top:{e.get("rule_y",e.get("big_y",330)+e.get("big_size",500)*0.9)}px;width:{e.get("rule_w",760)}px"></div>'
             if sub: inner += f'<div class="sub" id="{id_}u" style="top:{e.get("sub_y",800)}px">{accent(sub)}</div>'
             if e.get("cutout_png"): inner += f'<img class="cut" id="{id_}c" src="file://{os.path.abspath(e["cutout_png"])}" style="top:{e.get("cut_y",760)}px;left:0">'
@@ -356,7 +360,8 @@ tl.to("#{id_}",{{opacity:0,y:-40,duration:.25,ease:"power2.in"}},{t1-0.25});''')
             js.append(f'tl.to("#{id_}",{{opacity:0,y:60,duration:.25,ease:"power2.in"}},{t1-0.25});')
         elif ty == "board":
             w = e.get("w", 820)
-            body.append(f'<div class="el board" id="{id_}"><img id="{id_}i" src="file://{os.path.abspath(pth(e["path"]))}" style="width:{w}px;top:{e.get("y",300)}px"></div>')
+            lower=e.get("lower"); w=e.get("w",700 if lower else 820)
+            body.append(f'<div class="el board{" lower" if lower else ""}" id="{id_}"><img id="{id_}i" src="file://{os.path.abspath(pth(e["path"]))}" style="width:{w}px;top:{e.get("y",1060 if lower else 300)}px"></div>')
             js.append(f'tl.fromTo("#{id_}",{{opacity:0}},{{opacity:1,duration:.2}},{t0});')
             js.append(f'tl.fromTo("#{id_}i",{{y:80,scale:.9,opacity:0}},{{y:0,scale:1,opacity:1,duration:.5,ease:"power4.out"}},{t0+0.05});')
             js.append(f'tl.to("#{id_}i",{{scale:1.03,duration:{t1-t0},ease:"none"}},{t0});')
@@ -413,7 +418,8 @@ tl.to("#{id_}",{{opacity:0,y:-40,duration:.25,ease:"power2.in"}},{t1-0.25});''')
             for k, p in enumerate(phs):
                 if p.get("path"): inner += f'<div class="ph" id="{id_}p{k}"><img src="file://{os.path.abspath(pth(p["path"]))}"><div class="yours">{esc(p.get("label","yours"))}</div></div>'
                 else: inner += f'<div class="ph" id="{id_}p{k}"><div class="n">{esc(p.get("n",k+1))}</div></div>'
-            body.append(f'<div class="el fan" id="{id_}" style="top:{e.get("y",0)}px">{inner}</div>')
+            pw=e.get("w",440); ph_=int(pw*780/440)
+            body.append(f'<div class="el fan" id="{id_}" style="top:{e.get("y",0)}px"><style>#{id_} .ph{{width:{pw}px;height:{ph_}px;margin:{-ph_//2}px 0 0 {-pw//2}px;top:{e.get("cy",50)}%}}</style>{inner}</div>')
             js.append(f'tl.fromTo("#{id_}",{{opacity:0}},{{opacity:1,duration:.1}},{t0});')
             order = sorted(range(n), key=lambda k: abs(k - mid))
             for j, k in enumerate(order):

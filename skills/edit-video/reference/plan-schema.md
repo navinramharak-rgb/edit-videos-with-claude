@@ -40,7 +40,7 @@ Every element has `type`, `t0`, `t1` (and `engine: "py"` for `image`). `behind: 
 | `stamp` | `text`, `y` | |
 | `cta` | `text`, `btn`, `y` | hugs its text |
 | `card_image` | `path`, `w`, `h`, `y`, `rot`, `label` | tilted photo card |
-| `board` | `path`, `w`, `y` | real screenshot on dark |
+| `board` | `path`, `w`, `y`, `lower` | full-screen on dark, or with `lower: true` a card below the chin (w 640, y 1190) with captions shifted up (`captions.y_over_board`) |
 | `image` (py) | `path` (jpg/png/mp4), `mode` full/card | |
 | `filmstrip` | `dir` (jpgs) or `frames`, `count_to`, `h` | scrolling strip + FRAME counter |
 | `exploded` | `title`, `layers: [{path, label}]` | dark; layers fan out, labels stagger |

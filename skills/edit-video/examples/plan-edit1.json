@@ -100,7 +100,8 @@
    "comment the word edit",
    "I'll send you the skill"
   ],
-  "style": "mixed"
+  "style": "mixed",
+  "y_over_board": 1110
  },
  "camera": [
   {
@@ -273,17 +274,12 @@
  "shake": [
   "@go"
  ],
- "blur_bg": [
-  [
-   "@claude",
-   999
-  ]
- ],
+ "blur_bg": [],
  "elements": [
   {
    "type": "profile_card",
    "name": "Navin Ramharak",
-   "handle": "did not edit this",
+   "handle": "@navinramharak",
    "avatar": "assets/avatar.png",
    "mark": "x",
    "mark_at": "@not#0",
@@ -363,8 +359,9 @@
    "path": "assets/cutlist.png",
    "t0": "@cut#1-0.05",
    "t1": "@know-0.05",
-   "w": 820,
-   "y": 380
+   "w": 640,
+   "y": 1190,
+   "lower": true
   },
   {
    "type": "list_panel",
@@ -396,8 +393,9 @@
    "path": "assets/style_rules.png",
    "t0": "@writes#1",
    "t1": "@so#1",
-   "w": 820,
-   "y": 400
+   "w": 640,
+   "y": 1190,
+   "lower": true
   },
   {
    "type": "word_stack",
@@ -418,12 +416,14 @@
    "theme": "dark",
    "t0": "@part-0.3",
    "t1": "@before#1-0.05",
-   "big": "THE PART",
-   "big_size": 300,
-   "big_y": 640,
+   "big": "THE\nPART",
+   "big_size": 420,
+   "big_y": 420,
    "big_orange": true,
-   "sub_y": 860,
-   "sub": "nobody's showing you."
+   "sub_y": 1280,
+   "sub": "NOBODY'S SHOWING YOU.",
+   "glow": true,
+   "rule_w": 0
   },
   {
    "type": "image",
@@ -466,8 +466,9 @@
    "path": "assets/terminal.png",
    "t0": "@runs",
    "t1": "@laptop+0.3",
-   "w": 820,
-   "y": 420
+   "w": 640,
+   "y": 1190,
+   "lower": true
   },
   {
    "type": "cards",
@@ -510,7 +511,7 @@
    "word": "EDIT",
    "sub": "I'll send you the full setup. Free.",
    "brand": "BUILD WITH NAV",
-   "skill": "edit-videos-with-claude",
+   "skill": "buildwithnav.com/edit",
    "t0": "@save-0.05",
    "t1": 999,
    "reactions": true
@@ -578,28 +579,34 @@
   },
   {
    "type": "phone_fan",
-   "y": -60,
-   "spread": 15,
+   "y": 0,
+   "spread": 17,
    "phones": [
     {
-     "n": "2"
+     "path": "assets/ig/stop-using-ai.jpg",
+     "label": ""
     },
     {
-     "n": "3"
+     "path": "assets/ig/ai-tools.jpg",
+     "label": ""
     },
     {
-     "path": "assets/nav_tile.jpg",
-     "label": "yours"
+     "path": "assets/ig/fail.jpg",
+     "label": ""
     },
     {
-     "n": "4"
+     "path": "assets/ig/follow-up.jpg",
+     "label": ""
     },
     {
-     "n": "5"
+     "path": "assets/ig/really-means.jpg",
+     "label": ""
     }
    ],
    "t0": "@give#1",
-   "t1": "@made#1+0.3"
+   "t1": "@made#1+0.3",
+   "cy": 80,
+   "w": 300
   },
   {
    "type": "silhouette",

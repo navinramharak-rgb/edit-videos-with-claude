@@ -51,7 +51,7 @@
     "hook": "profile_card (name + what they did not do, red X slams on the key word) over the raw look, then switch_on",
     "poster": "orange gradient, grain, Anton big word slams letter by letter, underline sweep, italic serif small line, Bebas sub line, no face cutout",
     "list": "glass panel (dark, orange border glow), numbered, current item accent",
-    "proof": "board (real screenshot, dark dim, slide up) or card_image (tilted card, label)",
+    "proof": "board with lower:true (real screenshot as a card below the chin, captions shift up to y 1110); full-screen board only when the person is not speaking",
     "chips": "white rounded, tilted, pop with overshoot, max 2 per beat",
     "behind": "serif word behind the head, 280px, only when the head is low in frame",
     "cta": "dark box hugging text, Bebas headline, accent button",
@@ -88,11 +88,12 @@
     "other creators' faces in reference grids",
     "more than one whoosh per 10s",
     "captions over full-screen posters",
-    "graphics over the face"
+    "graphics over the face",
+    "a screenshot or card over the face while speaking: props sit below the chin, captions move up",
+    "graphics that make the viewer wait for the face: if a prop needs more than the lower third, make it a full-screen takeover of 3s or less"
   ],
   "background": {
-    "blur_px": 9,
-    "from": "switch_on",
-    "rule": "portrait blur behind the person once the edit switches on, so props read cleanly"
+    "blur_px": 0,
+    "rule": "no background blur by default: a textured set is part of the look. Blur (8 to 10px, from switch_on) only when the background is a plain or messy room."
   }
 }

@@ -65,8 +65,9 @@ FLASH=[T(f) for f in P.get("flash",[])]
 BLUR=[(T(a),TE(b)) for a,b in P.get("blur_bg",[])]
 CAPHIDE=[(T(a),TE(b)) for a,b in P.get("captions",{}).get("hide",[])]
 def _t0t1(e): return (T(e["t0"]), TE(e["t1"]) if "t1" in e else END)
-CAPHIDE+=[_t0t1(e) for e in ALL_EL if e["type"] in("poster","board","exploded","silhouette","outro") or (e["type"]=="image" and e.get("mode","full")=="full")]
+CAPHIDE+=[_t0t1(e) for e in ALL_EL if (e["type"] in("poster","exploded","silhouette","outro") or (e["type"]=="board" and not e.get("lower"))) or (e["type"]=="image" and e.get("mode","full")=="full")]
 SHAKE=[T(s) for s in P.get("shake",[])]
+CAPUP=[_t0t1(e) for e in ALL_EL if e["type"]=="board" and e.get("lower")]
 json.dump({"elements":ALL_EL,"switch_on":(T(P["sound"]["switch_on"]) if P.get("sound",{}).get("switch_on") else None),"flash":FLASH,"shake":SHAKE,"end":END},open(os.path.join(BASE,"resolved.json"),"w"),indent=1)
 # ---------- camera ----------
 AX,AY=P.get("anchor",[540,700])
@@ -312,7 +313,8 @@ def caption(t):
         f=fs[0]; sp=f.getlength(" "); wd=[fs[i].getlength(x) for i,x in enumerate(ws)]
         lines=[list(range(len(ws)))]
         if sum(wd)+sp*(len(ws)-1)>W-160: m=(len(ws)+1)//2; lines=[list(range(m)),list(range(m,len(ws)))]
-        G=layer(); L=layer(); dg=ImageDraw.Draw(G); d=ImageDraw.Draw(L); y0=CAPY-(len(lines)-1)*(CAPS*0.56)
+        capy=P.get("captions",{}).get("y_over_board",1120) if any(a<=t<b for a,b in CAPUP) else CAPY
+        G=layer(); L=layer(); dg=ImageDraw.Draw(G); d=ImageDraw.Draw(L); y0=capy-(len(lines)-1)*(CAPS*0.56)
         for li,ln in enumerate(lines):
             lw=sum(wd[i] for i in ln)+sp*(len(ln)-1); x=(W-lw)/2; y=y0+li*CAPS*1.12
             for i in ln:
