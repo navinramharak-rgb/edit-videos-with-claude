@@ -77,6 +77,10 @@ EOF
 ( cd "$T" && "$VENV/bin/python" "$SKILL/scripts/overlay.py" plan.json -o ov >>"$LOG" 2>&1 && "$VENV/bin/python" "$SKILL/scripts/render_plan.py" plan.json -o smoke_video.mp4 --overlay ov >>"$LOG" 2>&1 \
   && ffmpeg -y -v error -i smoke_video.mp4 -i base.mp4 -map 0:v -map 1:a -c:v copy -c:a aac -shortest smoke_test.mp4 ) && ok "$T/smoke_test.mp4 (open it)" || bad "smoke render failed (see $LOG)"
 
+step "9. Your editing folder"
+bash "$SKILL/setup/make-launcher.sh" | tee -a "$LOG"
+
 step "SUMMARY (also in $LOG)"
 grep -E "^\s+\[(ok|!!)\]" "$LOG"
-echo; echo "Open a NEW Terminal window, cd into your video project folder, run  claude  and type  /edit-video"
+echo; echo "Done. A folder called \"Claude Video Edits\" just opened. Drop a video into its raw folder and double-click \"Edit Video\"."
+open "$HOME/Claude Video Edits" 2>/dev/null || true

@@ -13,14 +13,19 @@ The launch video was edited entirely by this skill: [buildwithnav.com/edit](http
 
 Built for creators, not developers. You run one setup command, then you talk to Claude.
 
-## Quick start
+## Quick start (Mac, no coding)
 
-1. **Set up** (one time, 15 to 20 minutes, mostly downloads): see Install below.
-2. **Make a folder** for your video with a `raw/` folder inside. Drop the recording in it.
-3. **In Terminal:** `cd` into that folder, run `claude`, type `/edit-video`.
-4. **Approve the cut list. Approve the storyboard. Say go.** The finished file lands in `renders/`.
+1. Open Terminal (press Cmd + Space, type `Terminal`, press Enter), paste this one line, press Enter:
 
-That is the whole loop.
+   ```bash
+   curl -fsSL https://buildwithnav.com/edit/install | bash
+   ```
+
+   It installs everything (about 15 minutes, mostly downloads), then opens a folder called **Claude Video Edits**.
+2. Drop your raw recording into the **raw** folder inside it.
+3. Double-click **Edit Video**. Claude asks a couple of questions, shows you the cut list, shows you a storyboard of real frames, and renders after you say go. The finished file lands in **renders**.
+
+That is the whole loop. Add 5 to 10 of your own videos to **references** the first time so it learns your style instead of using mine.
 
 ## What it produces
 
@@ -33,9 +38,7 @@ A 9:16 (or any format) short that:
 - has sound design on every beat (sparingly: one whoosh per ten seconds) and is normalised to -14 LUFS for the platforms;
 - is rendered on your Mac as an H.265 file ready to post. Music gets added on the platform.
 
-## Install
-
-Requirements: Apple Silicon Mac on macOS 15 or newer, a Claude subscription that includes Claude Code (Pro or Max).
+## Install by hand (if you'd rather see the files)
 
 ```bash
 git clone https://github.com/navinramharak-rgb/edit-videos-with-claude.git ~/edit-videos-with-claude
@@ -43,19 +46,11 @@ cd ~/edit-videos-with-claude
 bash setup.sh
 ```
 
-Or download the zip from [buildwithnav.com/edit](https://buildwithnav.com/edit), unzip it, and run the same `bash setup.sh` inside the folder.
+Requirements: Apple Silicon Mac on macOS 15 or newer, and a Claude subscription that includes Claude Code (Pro or Max). The installer puts in Homebrew, ffmpeg, a Python environment (local Whisper, the person-matte model, headless Chromium), Claude Code itself, registers the skill so `/edit-video` works, creates the **Claude Video Edits** folder with the **Edit Video** launcher, and ends with a smoke-test video. Re-run it any time; it skips what is done.
 
-The installer puts in Homebrew, ffmpeg, a Python environment (faster-whisper for local transcription, a person-matte model, headless Chromium for the graphics), Claude Code, and registers the skill so `/edit-video` works. It ends with a smoke-test video. Re-run it any time; it skips what is done.
+To check your machine without installing anything: `bash doctor.sh`. It prints the exact fix for anything missing.
 
-To check your machine without installing anything:
-
-```bash
-bash doctor.sh
-```
-
-It prints the exact fix command for anything missing. Paste them one at a time.
-
-This also installs as a Cowork/Claude plugin: open the `edit-videos-with-claude.plugin` file in Cowork and click install, or use the marketplace commands under "Share it with others". The Mac setup is still needed for rendering.
+Already use Claude Code or the Claude desktop app? You can also install this as a plugin (open `edit-videos-with-claude.plugin`, or the marketplace commands below). The Mac setup is still needed once, because rendering happens on your machine.
 
 ## How to use it
 

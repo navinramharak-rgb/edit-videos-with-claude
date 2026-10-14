@@ -13,12 +13,12 @@ Skill root: the folder this file is in (`$SKILL`). Scripts in `scripts/`, runner
 
 1. Run `bash $SKILL/setup/doctor.sh`. If anything is `[!!]`, show the creator the exact fix lines it printed and stop until they're done. Don't try to install things yourself.
 2. Ask at most three questions, only the ones you can't infer:
-   - Where is the raw file? (Look in `raw/` and the current folder first. If there's a separate mic file next to it, use it.)
+   - Where is the raw file? (Look in `raw/` and the current folder first; beginners' setup puts everything in `~/Claude Video Edits/raw`. If there's a separate mic file next to it, use it.)
    - Platform and format? Default 9:16, 1080x1920, 30fps.
    - What's the one thing the video is for: teach, sell, or story, and what's the CTA? (If a script was pasted, infer it.)
 3. If `style/STYLE.md` exists in the project, read it. If not, run step 1. If the creator says "just use the default", use `presets/nav-signature.json` and say so.
 
-Set up the project layout if missing: `raw/ work/ renders/ style/ references/ assets/sfx/`.
+Set up the project layout if missing: `raw/ work/ renders/ style/ references/`. Talk like you're talking to someone who has never opened Terminal: short questions, one at a time, no jargon, and never ask them to run a command you can run yourself.
 
 ## 1. Learn the style (once per creator, 10 minutes)
 
