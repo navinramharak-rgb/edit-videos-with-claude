@@ -1,0 +1,9 @@
+{
+  "name": "edit-videos-with-claude",
+  "version": "1.0.0",
+  "description": "Edit a raw talking-head take into a finished, captioned, motion-graphic short in your own style, on your Mac. Local transcription, a cut-list approval, a storyboard approval, then a render with captions, zooms, posters, cards and sound design, every graphic tied to the words you said.",
+  "author": { "name": "Build With Nav" },
+  "homepage": "https://buildwithnav.com/edit",
+  "license": "MIT",
+  "keywords": ["video-editing", "short-form", "captions", "motion-graphics", "claude-code", "whisper", "ffmpeg", "creator", "talking-head", "reels", "tiktok", "shorts"]
+}

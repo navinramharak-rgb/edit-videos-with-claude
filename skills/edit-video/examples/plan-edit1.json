@@ -1,0 +1,632 @@
+{
+ "video": "vertical_cut.mp4",
+ "words": "vertical_cut_words.json",
+ "matte": "matte_540.u8",
+ "fps": 30,
+ "anchor": [
+  540,
+  560
+ ],
+ "style": {
+  "accent": "#FF6B2E"
+ },
+ "captions": {
+  "y": 1290,
+  "size": 92,
+  "max_words": 4,
+  "emphasis": [
+   "claude",
+   "free",
+   "storyboard",
+   "mac",
+   "go",
+   "cut",
+   "caption",
+   "zoom",
+   "raw",
+   "style",
+   "exactly",
+   "you",
+   "edit",
+   "skill",
+   "notes",
+   "laptop",
+   "course"
+  ],
+  "hide": [
+   [
+    "@studies",
+    "@captions+0.5"
+   ],
+   [
+    "@part-0.3",
+    "@before#1-0.05"
+   ],
+   [
+    "@storyboard",
+    "@what#1-0.05"
+   ],
+   [
+    "@free#1-0.05",
+    "@want+0.15"
+   ],
+   [
+    "@save-0.05",
+    999
+   ],
+   [
+    "@give#1",
+    "@made#1+0.3"
+   ],
+   [
+    "@so#0",
+    "@writes#0-0.2"
+   ],
+   [
+    "@every#0",
+    "@that#0"
+   ]
+  ],
+  "phrases": [
+   "Claude did",
+   "done by AI",
+   "for free",
+   "one raw take",
+   "writes down every word I said",
+   "cuts the bad takes",
+   "keeps my last clean one",
+   "shows me the cut list",
+   "before it cuts anything",
+   "I know what you're thinking",
+   "look like AI made it",
+   "I promise you it will not",
+   "5 to 10 of your own videos",
+   "a couple you wish you made",
+   "writes your style rules",
+   "edits exactly like you",
+   "not like AI",
+   "nobody's showing you",
+   "it gives me a storyboard",
+   "a real still of me",
+   "for every single line",
+   "approve it or give it notes",
+   "nothing renders until I say go",
+   "runs all on your Mac",
+   "footage never leaves your laptop",
+   "half the AI creators online",
+   "sell you a course",
+   "the whole skill for free",
+   "change it however you want",
+   "comment the word edit",
+   "I'll send you the skill"
+  ],
+  "style": "mixed"
+ },
+ "camera": [
+  {
+   "t": -0.3,
+   "z": 1.0,
+   "dur": 0.1
+  },
+  {
+   "t": 0.0,
+   "z": 1.06,
+   "dur": 1.9,
+   "ease": "creep"
+  },
+  {
+   "t": "@claude",
+   "z": 1.16,
+   "dur": 0.1,
+   "ease": "settle"
+  },
+  {
+   "t": "@done",
+   "z": 1.0,
+   "dur": 0.6,
+   "ease": "smooth"
+  },
+  {
+   "t": "@so#0",
+   "z": 1.06,
+   "dur": 1.2,
+   "ease": "creep"
+  },
+  {
+   "t": "@writes#0",
+   "z": 1.0,
+   "dur": 0.1
+  },
+  {
+   "t": "@know",
+   "z": 1.14,
+   "dur": 0.12,
+   "ease": "settle"
+  },
+  {
+   "t": "@promise",
+   "z": 1.22,
+   "dur": 0.1,
+   "ease": "settle"
+  },
+  {
+   "t": "@not#1",
+   "z": 1.0,
+   "dur": 0.4,
+   "ease": "smooth"
+  },
+  {
+   "t": "@studies",
+   "z": 1.06,
+   "dur": 2.0,
+   "ease": "creep"
+  },
+  {
+   "t": "@exactly",
+   "z": 1.16,
+   "dur": 0.12,
+   "ease": "settle"
+  },
+  {
+   "t": "@not#2",
+   "z": 1.0,
+   "dur": 0.12
+  },
+  {
+   "t": "@before#1",
+   "z": 1.08,
+   "dur": 0.12
+  },
+  {
+   "t": "@approve",
+   "z": 1.0,
+   "dur": 0.1
+  },
+  {
+   "t": "@notes",
+   "z": 1.1,
+   "dur": 0.12
+  },
+  {
+   "t": "@nothing",
+   "z": 1.0,
+   "dur": 0.1
+  },
+  {
+   "t": "@go",
+   "z": 1.18,
+   "dur": 0.1,
+   "ease": "settle"
+  },
+  {
+   "t": "@runs",
+   "z": 1.0,
+   "dur": 0.2
+  },
+  {
+   "t": "@half",
+   "z": 1.08,
+   "dur": 0.12
+  },
+  {
+   "t": "@giving",
+   "z": 1.12,
+   "dur": 0.1,
+   "ease": "settle"
+  },
+  {
+   "t": "@change",
+   "z": 1.0,
+   "dur": 0.2
+  },
+  {
+   "t": "@comment",
+   "z": 1.1,
+   "dur": 0.12
+  },
+  {
+   "t": "@save",
+   "z": 1.0,
+   "dur": 0.4,
+   "ease": "smooth"
+  },
+  {
+   "t": "@every#0",
+   "z": 1.22,
+   "dur": 0.0
+  },
+  {
+   "t": "@every#0+0.5",
+   "z": 1.08,
+   "dur": 0.0
+  },
+  {
+   "t": "@every#2",
+   "z": 1.18,
+   "dur": 0.1,
+   "ease": "settle"
+  },
+  {
+   "t": "@done",
+   "z": 1.0,
+   "dur": 0.6,
+   "ease": "smooth"
+  }
+ ],
+ "grade": [
+  {
+   "t0": -1,
+   "t1": "@claude<",
+   "mode": "raw"
+  },
+  {
+   "t0": "@it's",
+   "t1": "@promise-0.02",
+   "mode": "bw"
+  }
+ ],
+ "flash": [
+  "@claude",
+  "@promise",
+  "@giving"
+ ],
+ "shake": [
+  "@go"
+ ],
+ "blur_bg": [
+  [
+   "@claude",
+   999
+  ]
+ ],
+ "elements": [
+  {
+   "type": "profile_card",
+   "name": "Navin Ramharak",
+   "handle": "did not edit this",
+   "avatar": "assets/avatar.png",
+   "mark": "x",
+   "mark_at": "@not#0",
+   "t0": -0.2,
+   "t1": "@claude<",
+   "y": 250,
+   "rot": -3
+  },
+  {
+   "type": "kinetic",
+   "text": "CLAUDE",
+   "behind": true,
+   "from": "right",
+   "y": 40,
+   "size": 330,
+   "rot": -4,
+   "t0": "@claude",
+   "t1": "@that#0"
+  },
+  {
+   "type": "raw_tag",
+   "text": "RAW \u00b7 00:00:07",
+   "t0": -1,
+   "t1": "@claude<"
+  },
+  {
+   "type": "cut_marker",
+   "t0": "@every#0",
+   "t1": "@every#0+0.2"
+  },
+  {
+   "type": "pill",
+   "text": "every *cut*",
+   "t0": "@every#0",
+   "t1": "@every#1<",
+   "y": 1225
+  },
+  {
+   "type": "pill",
+   "text": "every *caption*",
+   "t0": "@every#1",
+   "t1": "@every#2<",
+   "y": 1225
+  },
+  {
+   "type": "brackets",
+   "t0": "@every#2",
+   "t1": "@done+0.2"
+  },
+  {
+   "type": "pill",
+   "text": "every *zoom*",
+   "t0": "@every#2",
+   "t1": "@done+0.2",
+   "y": 1225
+  },
+  {
+   "type": "poster",
+   "t0": "@free#0-0.05",
+   "t1": "@so#0",
+   "small": "the whole skill",
+   "big": "FREE",
+   "big_y": 330,
+   "small_y": 200
+  },
+  {
+   "type": "prompt",
+   "label": "TRANSCRIPT",
+   "text": "it writes down every word I said",
+   "t0": "@writes#0",
+   "t1": "@cuts#0-0.25",
+   "type_end": "@said",
+   "y": 1480
+  },
+  {
+   "type": "board",
+   "path": "assets/cutlist.png",
+   "t0": "@cut#1-0.05",
+   "t1": "@know-0.05",
+   "w": 820,
+   "y": 380
+  },
+  {
+   "type": "list_panel",
+   "title": "it studies your",
+   "t0": "@studies",
+   "t1": "@captions+0.5",
+   "y": 1300,
+   "items": [
+    {
+     "text": "pacing",
+     "t": "@pacing"
+    },
+    {
+     "text": "fonts",
+     "t": "@fonts"
+    },
+    {
+     "text": "colours",
+     "t": "@colors"
+    },
+    {
+     "text": "captions",
+     "t": "@captions"
+    }
+   ]
+  },
+  {
+   "type": "board",
+   "path": "assets/style_rules.png",
+   "t0": "@writes#1",
+   "t1": "@so#1",
+   "w": 820,
+   "y": 400
+  },
+  {
+   "type": "word_stack",
+   "y": 50,
+   "size": 190,
+   "t1": "@ai#2+0.35",
+   "items": [
+    {
+     "text": "not like AI",
+     "t": "@not#2",
+     "color": "#FF6B2E"
+    }
+   ],
+   "t0": "@not#2"
+  },
+  {
+   "type": "poster",
+   "theme": "dark",
+   "t0": "@part-0.3",
+   "t1": "@before#1-0.05",
+   "big": "THE PART",
+   "big_size": 300,
+   "big_y": 640,
+   "big_orange": true,
+   "sub_y": 860,
+   "sub": "nobody's showing you."
+  },
+  {
+   "type": "image",
+   "engine": "py",
+   "path": "assets/storyboard_v.jpg",
+   "mode": "full",
+   "t0": "@storyboard",
+   "t1": "@what#1-0.05"
+  },
+  {
+   "type": "cards",
+   "y": 1540,
+   "t1": "@nothing",
+   "xs": [
+    300,
+    780
+   ],
+   "items": [
+    {
+     "text": "approve",
+     "dot": "#28C840",
+     "t": "@approve"
+    },
+    {
+     "text": "give notes",
+     "dot": "#FF6B2E",
+     "t": "@notes"
+    }
+   ]
+  },
+  {
+   "type": "stamp",
+   "text": "SAY GO",
+   "t0": "@go",
+   "t1": "@runs",
+   "y": 1480
+  },
+  {
+   "type": "board",
+   "path": "assets/terminal.png",
+   "t0": "@runs",
+   "t1": "@laptop+0.3",
+   "w": 820,
+   "y": 420
+  },
+  {
+   "type": "cards",
+   "y": 1540,
+   "t1": "@giving",
+   "xs": [
+    540
+   ],
+   "items": [
+    {
+     "text": "then sell you a course",
+     "dot": "#FF5F57",
+     "dark": true,
+     "t": "@sell"
+    }
+   ]
+  },
+  {
+   "type": "poster",
+   "t0": "@free#1-0.05",
+   "t1": "@want+0.15",
+   "small": "the whole skill",
+   "big": "FREE",
+   "big_y": 330,
+   "small_y": 200,
+   "sub": "CHANGE IT HOWEVER YOU WANT",
+   "sub_y": 860
+  },
+  {
+   "type": "cta",
+   "text": "COMMENT *EDIT*",
+   "btn": "I'll send you the skill \u2192",
+   "t0": "@comment",
+   "t1": "@save-0.05",
+   "y": 1460
+  },
+  {
+   "type": "outro",
+   "headline": "COMMENT *EDIT*",
+   "word": "EDIT",
+   "sub": "I'll send you the full setup. Free.",
+   "brand": "BUILD WITH NAV",
+   "skill": "edit-videos-with-claude",
+   "t0": "@save-0.05",
+   "t1": 999,
+   "reactions": true
+  },
+  {
+   "type": "exploded",
+   "title": "done by *AI*",
+   "layers": [
+    {
+     "path": "assets/layer_video.jpg",
+     "label": "CUTS + ZOOM"
+    },
+    {
+     "path": "assets/layer_captions.png",
+     "label": "CAPTIONS"
+    },
+    {
+     "path": "assets/layer_graphics.png",
+     "label": "GRAPHICS"
+    }
+   ],
+   "t0": "@that#0",
+   "t1": "@and#0-0.05"
+  },
+  {
+   "type": "filmstrip",
+   "dir": "assets/strip",
+   "count_to": 2241,
+   "t0": "@so#0",
+   "t1": "@writes#0-0.2"
+  },
+  {
+   "type": "timeline",
+   "video_only": true,
+   "transcript": "I did ~not edit, I did not, um~ not edit this video",
+   "t0": "@cuts#0-0.1",
+   "t1": "@shows-0.15",
+   "y": 1500,
+   "clips": [
+    [
+     "@cuts#0-0.1",
+     "@shows-0.15"
+    ]
+   ],
+   "items": [
+    {
+     "kind": "removed",
+     "t": "@cuts#0+0.1",
+     "t_end": "@cuts#0+0.6",
+     "label": "retake"
+    },
+    {
+     "kind": "removed",
+     "t": "@bad",
+     "t_end": "@bad+0.3",
+     "label": "um"
+    },
+    {
+     "kind": "removed",
+     "t": "@keeps",
+     "t_end": "@keeps+0.35",
+     "label": "dead air"
+    }
+   ]
+  },
+  {
+   "type": "phone_fan",
+   "y": -60,
+   "spread": 15,
+   "phones": [
+    {
+     "n": "2"
+    },
+    {
+     "n": "3"
+    },
+    {
+     "path": "assets/nav_tile.jpg",
+     "label": "yours"
+    },
+    {
+     "n": "4"
+    },
+    {
+     "n": "5"
+    }
+   ],
+   "t0": "@give#1",
+   "t1": "@made#1+0.3"
+  },
+  {
+   "type": "silhouette",
+   "cutout": "@exactly",
+   "text": "LIKE YOU",
+   "y": 1280,
+   "t0": "@exactly",
+   "t1": "@not#2-0.05"
+  }
+ ],
+ "duration": 64.0,
+ "look": {
+  "contrast": 1.08,
+  "warm_r": 1.03,
+  "warm_b": 0.97,
+  "vignette": 0.18,
+  "from": "@claude"
+ },
+ "drift": [
+  [
+   -1,
+   "@claude<"
+  ]
+ ],
+ "flash_alpha": 120,
+ "sound": {
+  "switch_on": "@claude"
+ },
+ "blur_px": 9
+}

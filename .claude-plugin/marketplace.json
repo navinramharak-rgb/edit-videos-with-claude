@@ -1,0 +1,12 @@
+{
+  "name": "build-with-nav",
+  "owner": { "name": "Navin Ramharak (Build With Nav)" },
+  "plugins": [
+    {
+      "name": "edit-videos-with-claude",
+      "source": "./",
+      "description": "Edit a raw talking-head take into a finished, captioned, motion-graphic short in your own style, on your Mac.",
+      "category": "video"
+    }
+  ]
+}

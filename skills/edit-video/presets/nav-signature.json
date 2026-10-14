@@ -1,0 +1,98 @@
+{
+  "name": "nav-signature",
+  "description": "Nav's look: Anton display type on orange gradient posters, glass panels, mixed-typography captions (Inter ExtraBold + Instrument Serif italic accent), one accent colour, a prop for every line (Sahas-style pattern interrupts) on a blurred portrait background.",
+  "accent": "#FF6B2E",
+  "fonts": {
+    "display": "Anton",
+    "display_alt": "Bebas Neue",
+    "serif": "Instrument Serif",
+    "sans": "Inter",
+    "mono": "DejaVu Sans Mono"
+  },
+  "captions": {
+    "style": "mixed",
+    "sans": "Inter ExtraBold",
+    "serif_accent": "Instrument Serif Italic",
+    "size": 92,
+    "y": 1290,
+    "mode": "phrases",
+    "coverage": 0.6,
+    "emphasis_color": "accent",
+    "halo": true,
+    "rule": "one accent word per phrase, the word that carries the meaning"
+  },
+  "pace": {
+    "visual_change_every_s": [
+      1,
+      2.5
+    ],
+    "max_element_types_per_section": 2,
+    "rule": "every spoken claim gets a prop: a card, a word, a strip, a layer view. Never two full-screen takeovers back to back."
+  },
+  "camera": {
+    "eases": [
+      "snap",
+      "settle",
+      "creep"
+    ],
+    "punch_in": [
+      1.08,
+      1.18
+    ],
+    "anchor": "face"
+  },
+  "look": {
+    "contrast": 1.08,
+    "warm_r": 1.03,
+    "warm_b": 0.97,
+    "vignette": 0.18
+  },
+  "elements": {
+    "hook": "profile_card (name + what they did not do, red X slams on the key word) over the raw look, then switch_on",
+    "poster": "orange gradient, grain, Anton big word slams letter by letter, underline sweep, italic serif small line, Bebas sub line, no face cutout",
+    "list": "glass panel (dark, orange border glow), numbered, current item accent",
+    "proof": "board (real screenshot, dark dim, slide up) or card_image (tilted card, label)",
+    "chips": "white rounded, tilted, pop with overshoot, max 2 per beat",
+    "behind": "serif word behind the head, 280px, only when the head is low in frame",
+    "cta": "dark box hugging text, Bebas headline, accent button",
+    "outro": "dark card: COMMENT <word>, comment box types the word, heart + word reactions pop around it, brand line, skill name",
+    "kinetic": "one extruded Anton word per video, accent colour, slides in behind the head on the name of the thing (CLAUDE)",
+    "filmstrip": "strip of real source frames scrolling across the top + FRAME 0000/NNNN counter, for 'one raw take / every frame' lines",
+    "exploded": "the edit comes apart into layers (footage, captions, graphics) on dark, labelled, for 'every cut, caption, zoom' lines",
+    "cut_timeline": "video-only timeline, red removed regions labelled retake/um/dead air, struck-through transcript, for 'cuts the bad takes'",
+    "phone_fan": "your own videos fan out as phones (one real screenshot, the rest numbered), for 'give it your videos'",
+    "silhouette": "black cutout of the person on dark with orange glow + one Anton line, for 'like you' moments"
+  },
+  "sound": {
+    "whoosh_only_on": [
+      "poster",
+      "kinetic",
+      "exploded"
+    ],
+    "riser_before_posters": true,
+    "bed_level": 0.012,
+    "loudness_lufs": -14,
+    "true_peak": -1.5,
+    "tick_train_on": [
+      "filmstrip"
+    ]
+  },
+  "broll": {
+    "enabled": false,
+    "source": "higgsfield",
+    "max_credits": 50,
+    "rule": "only where no real footage exists and it adds meaning"
+  },
+  "never": [
+    "face freeze-frame cutouts on posters",
+    "other creators' faces in reference grids",
+    "more than one whoosh per 10s",
+    "captions over full-screen posters",
+    "graphics over the face"
+  ],
+  "background": {
+    "blur_px": 9,
+    "from": "switch_on",
+    "rule": "portrait blur behind the person once the edit switches on, so props read cleanly"
+  }
+}
