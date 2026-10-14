@@ -34,7 +34,7 @@ step "2. ffmpeg (full build)"
 brew list ffmpeg-full >/dev/null 2>&1 || { echo "  installing ffmpeg-full (a few minutes)..."; brew install ffmpeg-full >>"$LOG" 2>&1; }
 addpath "$(brew --prefix ffmpeg-full)/bin"
 ffmpeg -version >/dev/null 2>&1 && ok "$(ffmpeg -version | head -1 | cut -c1-30)" || bad "ffmpeg missing"
-ffmpeg -hide_banner -filters 2>&1 | grep -q loudnorm && ok "loudnorm" || bad "ffmpeg build without loudnorm"
+ffmpeg -v error -f lavfi -i "anullsrc=r=48000:cl=mono:d=0.2" -af loudnorm -f null - >/dev/null 2>&1 && ok "loudnorm" || bad "ffmpeg build without loudnorm"
 
 step "3. uv + Python 3.12"
 command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh >>"$LOG" 2>&1
