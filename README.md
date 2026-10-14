@@ -23,9 +23,14 @@ Built for creators, not developers. You run one setup command, then you talk to 
 
    It installs everything (about 15 minutes, mostly downloads), then opens a folder called **Claude Video Edits**.
 2. Drop your raw recording into the **raw** folder inside it.
-3. Double-click **Edit Video**. Claude asks a couple of questions, shows you the cut list, shows you a storyboard of real frames, and renders after you say go. The finished file lands in **renders**.
+3. Double-click **Edit Video.command**. A Terminal window opens with Claude Code running in that folder (Claude Code is the version of Claude that can run the tools on your Mac). Claude asks a couple of questions, shows you the cut list, shows you a storyboard of real frames, and renders after you say go. The finished file lands in **renders**.
 
 That is the whole loop. Add 5 to 10 of your own videos to **references** the first time so it learns your style instead of using mine.
+
+
+### What the installer puts on your Mac, and why
+
+Homebrew (the standard Mac package manager, if missing), ffmpeg (the open-source video engine), Claude Code (if missing; you sign in with your own Claude account), a Python environment in `~/.claude-video` with faster-whisper (speech to word timings, on your Mac), a person-matte model (finds you in the frame) and headless Chromium (draws the graphics), this skill in `~/edit-videos-with-claude`, and your `Claude Video Edits` folder. About 2GB of downloads. It never uploads footage, creates no accounts and changes no system settings. To remove everything: delete `~/edit-videos-with-claude`, `~/.claude-video`, `~/.claude/skills/edit-video` and `Claude Video Edits`.
 
 ## What it produces
 

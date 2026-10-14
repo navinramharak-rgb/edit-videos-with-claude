@@ -34,7 +34,7 @@ step "2. ffmpeg (full build)"
 brew list ffmpeg-full >/dev/null 2>&1 || { echo "  installing ffmpeg-full (a few minutes)..."; brew install ffmpeg-full >>"$LOG" 2>&1; }
 addpath "$(brew --prefix ffmpeg-full)/bin"
 ffmpeg -version >/dev/null 2>&1 && ok "$(ffmpeg -version | head -1 | cut -c1-30)" || bad "ffmpeg missing"
-ffmpeg -hide_banner -filters 2>/dev/null | grep -q loudnorm && ok "loudnorm" || bad "ffmpeg build without loudnorm"
+ffmpeg -hide_banner -filters 2>&1 | grep -q loudnorm && ok "loudnorm" || bad "ffmpeg build without loudnorm"
 
 step "3. uv + Python 3.12"
 command -v uv >/dev/null || curl -LsSf https://astral.sh/uv/install.sh | sh >>"$LOG" 2>&1
@@ -70,9 +70,12 @@ say -o "$T/voice.aiff" "Most people edit videos the hard way. Here is how Claude
 ffmpeg -y -v error -f lavfi -i "color=c=0x2a1a12:s=1080x1920:r=30" -i "$T/voice.aiff" -shortest -c:v libx264 -pix_fmt yuv420p -c:a aac "$T/base.mp4"
 "$VENV/bin/python" "$SKILL/scripts/transcribe.py" "$T/base.mp4" -o "$T" >>"$LOG" 2>&1 && echo "  heard: $(cat "$T/transcript.txt")"
 cat > "$T/plan.json" <<EOF
-{"video":"base.mp4","words":"words.json","captions":{"y":1290,"size":92,"style":"mixed","emphasis":["claude","sixty"],"phrases":["edit videos the hard way","how Claude does it","in sixty seconds"]},
- "elements":[{"type":"hook_box","text":"the *hard* way","t0":0,"t1":"@here<","y":150},{"type":"stamp","text":"60 SEC","t0":"@sixty","t1":999}],
+{"video":"base.mp4","words":"words.json","captions":{"y":1290,"size":92,"style":"mixed","emphasis":["claude","hard"],"phrases":["edit videos the hard way","how Claude does it"]},
+ "elements":[{"type":"hook_box","text":"the *hard* way","t0":0,"t1":"@claude<","y":150},{"type":"stamp","text":"CLAUDE","t0":"@claude","t1":999}],
  "camera":[{"t":"@claude","z":1.12,"dur":0.1,"ease":"settle"}]}
+EOF
+grep -qi "claude" "$T/transcript.txt" || cat > "$T/plan.json" <<EOF
+{"video":"base.mp4","words":"words.json","captions":{"y":1290,"size":92,"style":"mixed","max_words":4},"elements":[{"type":"hook_box","text":"the *hard* way","t0":0,"t1":2.0,"y":150},{"type":"stamp","text":"CLAUDE","t0":2.2,"t1":999}],"camera":[{"t":2.2,"z":1.12,"dur":0.1,"ease":"settle"}]}
 EOF
 ( cd "$T" && "$VENV/bin/python" "$SKILL/scripts/overlay.py" plan.json -o ov >>"$LOG" 2>&1 && "$VENV/bin/python" "$SKILL/scripts/render_plan.py" plan.json -o smoke_video.mp4 --overlay ov >>"$LOG" 2>&1 \
   && ffmpeg -y -v error -i smoke_video.mp4 -i base.mp4 -map 0:v -map 1:a -c:v copy -c:a aac -shortest smoke_test.mp4 ) && ok "$T/smoke_test.mp4 (open it)" || bad "smoke render failed (see $LOG)"

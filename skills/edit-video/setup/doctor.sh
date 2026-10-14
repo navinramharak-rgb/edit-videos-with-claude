@@ -11,7 +11,7 @@ command -v brew >/dev/null 2>&1 && export PATH="$(brew --prefix ffmpeg-full 2>/d
 echo "== edit-video doctor"
 if [ "$(uname)" = "Darwin" ]; then echo "  macOS $(sw_vers -productVersion) · $(sysctl -n machdep.cpu.brand_string)"; else echo "  $(uname -s) (built for macOS; Linux works with manual installs)"; fi
 command -v brew >/dev/null && ok "Homebrew" || { bad "Homebrew missing"; fix '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'; }
-if command -v ffmpeg >/dev/null; then ffmpeg -hide_banner -filters 2>/dev/null | grep -q loudnorm && ok "ffmpeg $(ffmpeg -version | head -1 | awk '{print $3}')" || { bad "ffmpeg without loudnorm"; fix "brew install ffmpeg-full && echo 'export PATH=\"\$(brew --prefix ffmpeg-full)/bin:\$PATH\"' >> ~/.zprofile"; }
+if command -v ffmpeg >/dev/null; then ffmpeg -hide_banner -filters 2>&1 | grep -q loudnorm && ok "ffmpeg $(ffmpeg -version | head -1 | awk '{print $3}')" || { bad "ffmpeg without loudnorm"; fix "brew install ffmpeg-full && echo 'export PATH=\"\$(brew --prefix ffmpeg-full)/bin:\$PATH\"' >> ~/.zprofile"; }
 else bad "ffmpeg missing"; fix "brew install ffmpeg-full && echo 'export PATH=\"\$(brew --prefix ffmpeg-full)/bin:\$PATH\"' >> ~/.zprofile"; fi
 command -v uv >/dev/null && ok "uv" || { bad "uv missing"; fix "curl -LsSf https://astral.sh/uv/install.sh | sh"; }
 command -v claude >/dev/null && ok "Claude Code $(claude --version 2>/dev/null | head -1)" || { bad "Claude Code missing"; fix "curl -fsSL https://claude.ai/install.sh | bash"; }
